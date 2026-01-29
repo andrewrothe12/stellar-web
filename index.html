@@ -34,6 +34,13 @@
             color: white;
             min-width: 250px;
             backdrop-filter: blur(10px);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        #controls-panel.hidden {
+            transform: translateX(-120%);
+            opacity: 0;
+            pointer-events: none;
         }
 
         .control-group {
@@ -155,24 +162,33 @@
             opacity: 1;
         }
 
-        #stats-toggle {
+        .toggle-btn {
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
             background: rgba(20, 20, 40, 0.6);
             color: white;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px 5px 0 0;
             cursor: pointer;
             font-size: 12px;
             backdrop-filter: blur(10px);
             transition: background 0.3s;
         }
 
-        #stats-toggle:hover {
+        .toggle-btn:hover {
             background: rgba(20, 20, 40, 0.9);
+        }
+
+        #stats-toggle {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px 5px 0 0;
+        }
+
+        #controls-toggle {
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
         }
 
         .stats-grid {
@@ -211,6 +227,9 @@
 </head>
 <body>
     <div id="canvas-container"></div>
+
+    <!-- Controls Toggle Button -->
+    <button id="controls-toggle" class="toggle-btn">◀ Hide Controls</button>
 
     <!-- Controls Panel -->
     <div id="controls-panel">
@@ -259,7 +278,7 @@
     </div>
 
     <!-- Stats Toggle Button -->
-    <button id="stats-toggle">▲ Show Statistics</button>
+    <button id="stats-toggle" class="toggle-btn">▲ Show Statistics</button>
 
     <!-- Stats Panel -->
     <div id="stats-panel">

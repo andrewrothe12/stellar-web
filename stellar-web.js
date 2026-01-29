@@ -713,6 +713,23 @@ class StellarWeb {
             });
         });
 
+        // Controls panel toggle
+        const controlsToggle = document.getElementById('controls-toggle');
+        const controlsPanel = document.getElementById('controls-panel');
+        let controlsVisible = true;
+
+        controlsToggle.addEventListener('click', () => {
+            controlsVisible = !controlsVisible;
+
+            if (controlsVisible) {
+                controlsPanel.classList.remove('hidden');
+                controlsToggle.textContent = '◀ Hide Controls';
+            } else {
+                controlsPanel.classList.add('hidden');
+                controlsToggle.textContent = '▶ Show Controls';
+            }
+        });
+
         // Stats panel toggle
         const statsToggle = document.getElementById('stats-toggle');
         const statsPanel = document.getElementById('stats-panel');
