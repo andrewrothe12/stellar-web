@@ -723,10 +723,12 @@ class StellarWeb {
 
             if (controlsVisible) {
                 controlsPanel.classList.remove('hidden');
-                controlsToggle.textContent = '◀ Hide Controls';
+                controlsToggle.classList.remove('hidden');
+                controlsToggle.textContent = '◀';
             } else {
                 controlsPanel.classList.add('hidden');
-                controlsToggle.textContent = '▶ Show Controls';
+                controlsToggle.classList.add('hidden');
+                controlsToggle.textContent = '▶';
             }
         });
 
@@ -740,10 +742,12 @@ class StellarWeb {
 
             if (statsVisible) {
                 statsPanel.classList.add('visible');
-                statsToggle.textContent = '▼ Hide Statistics';
+                statsToggle.classList.add('visible');
+                statsToggle.textContent = '▼';
             } else {
                 statsPanel.classList.remove('visible');
-                statsToggle.textContent = '▲ Show Statistics';
+                statsToggle.classList.remove('visible');
+                statsToggle.textContent = '▲';
             }
         });
 

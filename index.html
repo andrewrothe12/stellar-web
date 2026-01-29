@@ -164,31 +164,45 @@
 
         .toggle-btn {
             position: absolute;
-            background: rgba(20, 20, 40, 0.6);
+            background: rgba(20, 20, 40, 0.9);
             color: white;
             border: none;
-            padding: 10px 20px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 20px;
             backdrop-filter: blur(10px);
-            transition: background 0.3s;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
         }
 
         .toggle-btn:hover {
-            background: rgba(20, 20, 40, 0.9);
-        }
-
-        #stats-toggle {
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 5px 5px 0 0;
+            background: rgba(76, 175, 80, 0.9);
+            transform: scale(1.1);
         }
 
         #controls-toggle {
-            top: 10px;
-            left: 10px;
-            border-radius: 5px;
+            top: 20px;
+            left: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        #controls-toggle.hidden {
+            left: 0;
+        }
+
+        #stats-toggle {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px 10px 0 0;
+        }
+
+        #stats-toggle.visible {
+            bottom: 0;
         }
 
         .stats-grid {
@@ -229,7 +243,7 @@
     <div id="canvas-container"></div>
 
     <!-- Controls Toggle Button -->
-    <button id="controls-toggle" class="toggle-btn">◀ Hide Controls</button>
+    <button id="controls-toggle" class="toggle-btn">◀</button>
 
     <!-- Controls Panel -->
     <div id="controls-panel">
@@ -278,7 +292,7 @@
     </div>
 
     <!-- Stats Toggle Button -->
-    <button id="stats-toggle" class="toggle-btn">▲ Show Statistics</button>
+    <button id="stats-toggle" class="toggle-btn">▲</button>
 
     <!-- Stats Panel -->
     <div id="stats-panel">
